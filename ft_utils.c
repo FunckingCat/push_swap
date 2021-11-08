@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/08 14:23:40 by unix              #+#    #+#             */
-/*   Updated: 2021/11/08 20:42:14 by unix             ###   ########.fr       */
+/*   Created: 2021/11/08 18:55:59 by unix              #+#    #+#             */
+/*   Updated: 2021/11/08 19:06:06 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include "libft/libft.h"
-# include <stdio.h>
+int	ft_min_arr(int *arr, int len)
+{
+	int min;
+	int	index;
 
-//VALIDATE
-int	ft_validate_stack(char **st);
-int ft_has_dups(int *arr, int len);
-
-//UTILS
-int	ft_min_arr(int *arr, int len);
-
-#endif
+	min = INT_MAX;
+	index = len;
+	while (len--)
+	{
+		if (arr[len] < min)
+		{
+			min = arr[len];
+			index = len;
+		}
+	}
+	return (index);
+}
