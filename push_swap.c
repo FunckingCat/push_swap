@@ -6,7 +6,7 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 14:23:37 by unix              #+#    #+#             */
-/*   Updated: 2021/11/08 20:50:10 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/08 21:02:06 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,16 +41,28 @@ int *ft_parse_stack(char **st)
 	len = 0;
 	while (st[len])
 		len++;
-	res = malloc((len) * sizeof(int)); //FREED
+	res = malloc((len) * sizeof(int));
 	i = 0;
 	while (st[i])
 	{
 		res[len - i++ - 1] = ft_atoi(st[i]);
 	}
 	if (ft_has_dups(res, len))
+	{
+		free(res);
 		return (NULL);
+	}
 	res = ft_indexate(res, len);
 	return (res);
+}
+
+void free_char_arr(char **st)
+{
+	while (*st)
+	{
+		free(*st);
+		st++;
+	}
 }
 
 int	main(int argc, char **argv)
@@ -63,22 +75,25 @@ int	main(int argc, char **argv)
 		ft_putstr_fd("Error (arguments)\n", 1);
 		return (0);
 	}
-	st = ft_split(argv[1], ' '); //DONT FREED
-	if (!ft_validate_stack(st))
+	st = ft_split(argv[1], ' ');
+	if (ft_validate_stack(st))
 	{
-		ft_putstr_fd("Error (validation)\n", 1);
-		return (0);
+		stack = ft_parse_stack(st);
+		if (stack)
+		{
+			for (int i = 0; stack[i] != -1; i++)
+			{
+				printf("%d\n", stack[i]);
+			}
+			free(stack);
+		}
+		else 
+			ft_putstr_fd("Error", 1);
 	}
-	stack = ft_parse_stack(st);  //DONT FREED
-	if (!stack)
-	{
-		ft_putstr_fd("Error (stack)\n", 1);
-		return (0);
-	}
-	while (*stack != -1)
-	{
-		printf("%d\n", *stack++);
-	}
+	else 
+		ft_putstr_fd("Error", 1);
+	free_char_arr(st);
+	free(st);
 	return (0);
 }
 
