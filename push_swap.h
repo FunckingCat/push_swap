@@ -6,7 +6,7 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 14:23:40 by unix              #+#    #+#             */
-/*   Updated: 2021/11/08 20:42:14 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/08 21:07:35 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 //VALIDATE
 int	ft_validate_stack(char **st);
-int ft_has_dups(int *arr, int len);
+int	ft_has_dups(int *arr, int len);
 
 //UTILS
 int	ft_min_arr(int *arr, int len);

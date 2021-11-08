@@ -6,13 +6,13 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 14:23:37 by unix              #+#    #+#             */
-/*   Updated: 2021/11/08 21:02:06 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/08 21:07:15 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int *ft_indexate(int *arr, int len)
+int	*ft_indexate(int *arr, int len)
 {
 	int	*res;
 	int	id;
@@ -32,7 +32,7 @@ int *ft_indexate(int *arr, int len)
 	return (res);
 }
 
-int *ft_parse_stack(char **st)
+int	*ft_parse_stack(char **st)
 {
 	int	*res;
 	int	len;
@@ -56,7 +56,7 @@ int *ft_parse_stack(char **st)
 	return (res);
 }
 
-void free_char_arr(char **st)
+void	free_char_arr(char **st)
 {
 	while (*st)
 	{
@@ -67,9 +67,9 @@ void free_char_arr(char **st)
 
 int	main(int argc, char **argv)
 {
-	char	**st; 
-	int 	*stack;
-	
+	char	**st;
+	int		*stack;
+
 	if (argc != 2)
 	{
 		ft_putstr_fd("Error (arguments)\n", 1);
@@ -87,10 +87,10 @@ int	main(int argc, char **argv)
 			}
 			free(stack);
 		}
-		else 
+		else
 			ft_putstr_fd("Error", 1);
 	}
-	else 
+	else
 		ft_putstr_fd("Error", 1);
 	free_char_arr(st);
 	free(st);

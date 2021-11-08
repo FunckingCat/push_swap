@@ -6,19 +6,19 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 19:40:30 by unix              #+#    #+#             */
-/*   Updated: 2021/11/08 20:44:12 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/08 21:08:06 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ft_str_is_digit(char *str)
+int	ft_str_is_digit(char *str)
 {
 	int	i;
 
 	i = 0;
 	if (*str == '-')
-			str++;
+		str++;
 	while (*str)
 	{
 		if (!ft_isdigit(*str))
@@ -34,18 +34,18 @@ int ft_str_is_digit(char *str)
 int	ft_validate_stack(char **st)
 {
 	int	i;
-	
+
 	while (*st)
 	{
 		if (**st == '0' && *(*st + 1) == '\0')
 		{
 			st++;
-			continue;
+			continue ;
 		}
-		if (**st == '-' && *(*st + 1) == '1'  && *(*st + 2) == '\0')
+		if (**st == '-' && *(*st + 1) == '1' && *(*st + 2) == '\0')
 		{
 			st++;
-			continue;
+			continue ;
 		}
 		if (!ft_str_is_digit(*st))
 			return (0);
@@ -56,7 +56,7 @@ int	ft_validate_stack(char **st)
 	return (1);
 }
 
-int ft_has_dups(int *arr, int len)
+int	ft_has_dups(int *arr, int len)
 {
 	int	i;
 	int	j;
