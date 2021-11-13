@@ -6,7 +6,7 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 14:23:37 by unix              #+#    #+#             */
-/*   Updated: 2021/11/08 21:07:15 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/13 20:31:56 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ int	*ft_indexate(int *arr, int len)
 	id = 0;
 	i = 0;
 	res = malloc((len + 1) * sizeof(int));
-	while (i < len)
+	res[ft_max_arr(arr, len)] = len - 1;
+	while (i < len - 1)
 	{
 		res[ft_min_arr(arr, len)] = id++;
 		arr[ft_min_arr(arr, len)] = INT_MAX;
@@ -70,30 +71,32 @@ int	main(int argc, char **argv)
 	char	**st;
 	int		*stack;
 
-	if (argc != 2)
+	if (argc == 2)
 	{
-		ft_putstr_fd("Error (arguments)\n", 1);
-		return (0);
-	}
-	st = ft_split(argv[1], ' ');
-	if (ft_validate_stack(st))
-	{
-		stack = ft_parse_stack(st);
-		if (stack)
+		st = ft_split(argv[1], ' ');
+		if (ft_validate_stack(st))
 		{
-			for (int i = 0; stack[i] != -1; i++)
+			stack = ft_parse_stack(st);
+			if (stack)
 			{
-				printf("%d\n", stack[i]);
+				for (int i = 0; stack[i] != -1; i++)
+				{
+					printf("%d\n", stack[i]);
+				}
+				printf("->  %d\n", ft_is_sorted(stack, 1));
+				free(stack);
 			}
-			free(stack);
+			else
+				ft_putstr_fd("Error(stack parse)\n", 1);
 		}
 		else
-			ft_putstr_fd("Error", 1);
+			ft_putstr_fd("Error(stack validate)\n", 1);
+		free_char_arr(st);
+		free(st);
+		return (0);
 	}
 	else
-		ft_putstr_fd("Error", 1);
-	free_char_arr(st);
-	free(st);
+		ft_putstr_fd("Error(args)\n", 1);
 	return (0);
 }
 

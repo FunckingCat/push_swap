@@ -6,7 +6,7 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 18:55:59 by unix              #+#    #+#             */
-/*   Updated: 2021/11/08 21:08:14 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/13 20:31:41 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,41 @@ int	ft_min_arr(int *arr, int len)
 		}
 	}
 	return (index);
+}
+
+int	ft_max_arr(int *arr, int len)
+{
+	int	max;
+	int	index;
+
+	max = INT_MIN;
+	index = len;
+	while (len--)
+	{
+		if (arr[len] > max)
+		{
+			max = arr[len];
+			index = len;
+		}
+	}
+	return (index);
+}
+
+int	ft_is_sorted(int *arr, int direction)
+{
+	while (*(arr + 1) != -1)
+	{
+		if (direction == 0)
+		{
+			if (*arr > *(arr + 1))
+				return (0); 
+		}
+		else 
+		{
+			if (*arr < *(arr + 1))
+				return (0);
+		}
+		arr++;
+	}
+	return (1);
 }
