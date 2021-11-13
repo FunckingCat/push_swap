@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 14:23:37 by unix              #+#    #+#             */
-/*   Updated: 2021/11/13 20:31:56 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/13 20:38:30 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,11 +79,7 @@ int	main(int argc, char **argv)
 			stack = ft_parse_stack(st);
 			if (stack)
 			{
-				for (int i = 0; stack[i] != -1; i++)
-				{
-					printf("%d\n", stack[i]);
-				}
-				printf("->  %d\n", ft_is_sorted(stack, 1));
+				ft_sort(stack);
 				free(stack);
 			}
 			else
