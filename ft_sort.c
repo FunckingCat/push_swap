@@ -6,7 +6,7 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 20:35:34 by unix              #+#    #+#             */
-/*   Updated: 2021/11/14 18:30:34 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/14 19:09:35 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,6 @@ void	ft_sort(int *st_a)
 	
 	st_b = ft_alloc_b(ft_slen(st_a));
 	print_stacks(st_a, st_b);
-	ft_push('a', st_a, st_b);
+	ft_rev_rotate('a', st_a, st_b);
 	print_stacks(st_a, st_b);
-	printf("-> %d\n", ft_slen(st_a));
-	printf("-> %d\n", ft_slen(st_b));
 }
