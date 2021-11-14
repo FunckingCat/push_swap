@@ -6,7 +6,7 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 17:13:05 by unix              #+#    #+#             */
-/*   Updated: 2021/11/14 17:31:51 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/14 18:14:41 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,19 @@ void	ft_swap_val(int *d1, int *d2)
 		tmp = *d1;
 		*d1 = *d2;
 		*d2 = tmp;
+	}
+}
+
+void	print_stacks(int *st_a, int *st_b)
+{
+	int	i;
+
+	i = ft_slen(st_a);
+	if (ft_slen(st_b) > i)
+		i = ft_slen(st_b);
+	while (i >= 0)
+	{
+		printf("%6d   %6d\n", st_a[i], st_b[i]);
+		i--;
 	}
 }

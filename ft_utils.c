@@ -6,11 +6,17 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 18:55:59 by unix              #+#    #+#             */
-/*   Updated: 2021/11/13 20:31:41 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/14 18:01:01 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	ft_raise_error()
+{
+	ft_putstr_fd("Error\n", 1);
+	exit(1);
+}
 
 int	ft_min_arr(int *arr, int len)
 {

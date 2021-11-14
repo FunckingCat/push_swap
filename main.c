@@ -6,7 +6,7 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 14:23:37 by unix              #+#    #+#             */
-/*   Updated: 2021/11/13 20:38:30 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/14 18:03:14 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ int	*ft_indexate(int *arr, int len)
 	id = 0;
 	i = 0;
 	res = malloc((len + 1) * sizeof(int));
+	if (!res)
+		ft_raise_error();
 	res[ft_max_arr(arr, len)] = len - 1;
 	while (i < len - 1)
 	{
@@ -43,6 +45,8 @@ int	*ft_parse_stack(char **st)
 	while (st[len])
 		len++;
 	res = malloc((len) * sizeof(int));
+	if (!res)
+		ft_raise_error();
 	i = 0;
 	while (st[i])
 	{
@@ -83,16 +87,15 @@ int	main(int argc, char **argv)
 				free(stack);
 			}
 			else
-				ft_putstr_fd("Error(stack parse)\n", 1);
+				ft_raise_error();
 		}
 		else
-			ft_putstr_fd("Error(stack validate)\n", 1);
+			ft_raise_error();
 		free_char_arr(st);
 		free(st);
-		return (0);
 	}
 	else
-		ft_putstr_fd("Error(args)\n", 1);
+		ft_raise_error();
 	return (0);
 }
 

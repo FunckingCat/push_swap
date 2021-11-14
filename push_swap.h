@@ -6,7 +6,7 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 14:23:40 by unix              #+#    #+#             */
-/*   Updated: 2021/11/14 17:46:04 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/14 18:14:59 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 
 # include "libft/libft.h"
 # include <stdio.h>
+
+//TO DELETE
+void	print_stacks(int *st_a, int *st_b);
+
+//RAISE ERROR
+void	ft_raise_error();
 
 //VALIDATE
 int		ft_validate_stack(char **st);
