@@ -6,7 +6,7 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 14:23:40 by unix              #+#    #+#             */
-/*   Updated: 2021/11/14 18:14:59 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/14 19:51:23 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,8 @@ void	ft_swap(char mode, int *st_a, int *st_b);
 void	ft_push(char mode, int *st_a, int *st_b);
 void	ft_rotate(char mode, int *st_a, int *st_b);
 void	ft_rev_rotate(char mode, int *st_a, int *st_b);
+
+//SOLVE
+void	ft_solve_three(int *st);
 
 #endif

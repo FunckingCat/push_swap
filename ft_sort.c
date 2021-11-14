@@ -6,11 +6,12 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 20:35:34 by unix              #+#    #+#             */
-/*   Updated: 2021/11/14 19:09:35 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/14 19:51:28 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 int	*ft_alloc_b(int size)
 {
 	int	*st_b;
@@ -29,8 +30,13 @@ void	ft_sort(int *st_a)
 {
 	int	*st_b;
 	
+	if (ft_is_sorted(st_a, 0))
+		return ;
 	st_b = ft_alloc_b(ft_slen(st_a));
 	print_stacks(st_a, st_b);
-	ft_rev_rotate('a', st_a, st_b);
+	if (ft_slen(st_a) == 2)
+		ft_rotate('a', st_a, st_b);
+	if (ft_slen(st_a) == 3)
+		ft_solve_three(st_a);
 	print_stacks(st_a, st_b);
 }
