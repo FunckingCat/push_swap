@@ -6,13 +6,13 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 20:35:34 by unix              #+#    #+#             */
-/*   Updated: 2021/11/14 17:44:18 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/14 17:46:14 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_sort(int *st_a)
+void	ft_sort(int *st_a)
 {
 	int	*st_b;
 	int	i;
@@ -27,5 +27,4 @@ int	ft_sort(int *st_a)
 	}
 	printf("-> %d\n", ft_slen(st_a));
 	printf("-> %d\n", ft_slen(st_b));
-	return (st_a[0]);
 }
