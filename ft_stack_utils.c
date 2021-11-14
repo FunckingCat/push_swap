@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort.c                                          :+:      :+:    :+:   */
+/*   ft_stack_utils.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/13 20:35:34 by unix              #+#    #+#             */
-/*   Updated: 2021/11/14 17:44:18 by unix             ###   ########.fr       */
+/*   Created: 2021/11/14 17:13:05 by unix              #+#    #+#             */
+/*   Updated: 2021/11/14 17:31:51 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_sort(int *st_a)
+int	ft_slen(int *stack)
 {
-	int	*st_b;
-	int	i;
+	int	len;
 
-	i = 0;
-	st_b = malloc(ft_slen(st_a) * sizeof(int));
-	while (i < ft_slen(st_a) + 1)
-		*(st_b + i++) = -1;
-	for (int i = 0; st_a[i] != -1; i++)
+	len = 0;
+	while (*stack++ != -1)
+		len++;
+	return (len);
+}
+
+void	ft_swap_val(int *d1, int *d2)
+{
+	int	tmp;
+
+	if (d1 && d2)
 	{
-		printf("%d\n", st_a[i]);
+		tmp = *d1;
+		*d1 = *d2;
+		*d2 = tmp;
 	}
-	printf("-> %d\n", ft_slen(st_a));
-	printf("-> %d\n", ft_slen(st_b));
-	return (st_a[0]);
 }
