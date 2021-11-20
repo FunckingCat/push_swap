@@ -6,7 +6,7 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 20:35:34 by unix              #+#    #+#             */
-/*   Updated: 2021/11/20 20:06:23 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/20 20:38:46 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	*ft_alloc_b(int size)
 	int	i;
 
 	i = 0;
-	st_b = malloc(size * sizeof(int));
+	st_b = malloc((size + 1) * sizeof(int));
 	if (!st_b)
 		ft_raise_error();
 	while (i < size + 1)
