@@ -6,7 +6,7 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 14:23:37 by unix              #+#    #+#             */
-/*   Updated: 2021/11/14 18:03:14 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/20 20:12:57 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ int	*ft_indexate(int *arr, int len)
 	res = malloc((len + 1) * sizeof(int));
 	if (!res)
 		ft_raise_error();
-	res[ft_max_arr(arr, len)] = len - 1;
+	res[ft_min_arr(arr, len)] = len - 1;
 	while (i < len - 1)
 	{
-		res[ft_min_arr(arr, len)] = id++;
-		arr[ft_min_arr(arr, len)] = INT_MAX;
+		res[ft_max_arr(arr, len)] = id++;
+		arr[ft_max_arr(arr, len)] = INT_MIN;
 		i++;
 	}
 	res[len] = -1;
