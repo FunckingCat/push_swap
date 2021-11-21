@@ -6,7 +6,7 @@
 #    By: unix <unix@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/08 14:23:43 by unix              #+#    #+#              #
-#    Updated: 2021/11/14 20:10:35 by unix             ###   ########.fr        #
+#    Updated: 2021/11/21 15:56:51 by unix             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ LIB = -L '.' -lft
 
 HEADER = push_swap.h
 SRC_FILES = main.c ft_utils.c ft_validate_stack.c ft_sort.c ft_stack_utils.c \
-			ft_move.c ft_solve_uniqe.c
+			ft_move.c ft_solve_uniqe.c ft_solve_common.c
 
 OBJ_FILES = $(SRC_FILES:.c=.o)
 RM = rm -f

@@ -6,7 +6,7 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 19:34:12 by unix              #+#    #+#             */
-/*   Updated: 2021/11/14 20:23:37 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/21 20:00:21 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_solve_three(int *st)
 {
+	if (ft_is_sorted(st, 0))
+		return ;
 	if (st[0] == 0 && st[1] == 2 && st[2] == 1)
 		ft_swap('a', st, st);
 	if (st[0] == 2 && st[1] == 1 && st[2] == 0)
@@ -34,6 +36,8 @@ void	ft_solve_three(int *st)
 
 void	ft_solve_four(int *st_a, int *st_b)
 {
+	if (ft_is_sorted(st_a, 0))
+		return ;
 	if (ft_index(3, st_a) < 2)
 	{
 		while (st_a[3] != 3)
@@ -48,6 +52,8 @@ void	ft_solve_four(int *st_a, int *st_b)
 
 void	ft_solve_five(int *st_a, int *st_b)
 {
+	if (ft_is_sorted(st_a, 0))
+		return ;
 	if (ft_index(4, st_a) < 2)
 	{
 		while (st_a[4] != 4)

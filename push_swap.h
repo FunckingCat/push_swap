@@ -6,7 +6,7 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 14:23:40 by unix              #+#    #+#             */
-/*   Updated: 2021/11/14 20:17:17 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/21 18:32:05 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int		ft_is_sorted(int *arr, int direction);
 //UTILS
 int		ft_min_arr(int *arr, int len);
 int		ft_max_arr(int *arr, int len);
+int		ft_in(int elem, int min, int max);
 
 //STACK UTILS
 int		ft_slen(int *stack);
@@ -49,5 +50,6 @@ void	ft_rev_rotate(char mode, int *st_a, int *st_b);
 void	ft_solve_three(int *st);
 void	ft_solve_four(int *st_a, int *st_b);
 void	ft_solve_five(int *st_a, int *st_b);
+void	ft_solve_common(int *st_a, int *st_b);
 
 #endif

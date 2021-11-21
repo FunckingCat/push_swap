@@ -6,7 +6,7 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 20:35:34 by unix              #+#    #+#             */
-/*   Updated: 2021/11/20 20:38:46 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/21 15:56:18 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,7 @@ void	ft_sort(int *st_a)
 		ft_solve_four(st_a, st_b);
 	if (ft_slen(st_a) == 5)
 		ft_solve_five(st_a, st_b);
+	if (ft_slen(st_a) > 5)
+		ft_solve_common(st_a, st_b);
 	print_stacks(st_a, st_b);
 }
