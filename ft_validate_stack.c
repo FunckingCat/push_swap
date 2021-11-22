@@ -6,7 +6,7 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 19:40:30 by unix              #+#    #+#             */
-/*   Updated: 2021/11/22 15:25:06 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/22 16:05:54 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,20 +54,18 @@ int	ft_has_dups(int *arr, int len)
 int	*ft_indexate(int *arr, int len)
 {
 	int	*res;
-	int	id;
 	int	i;
 
-	id = 0;
 	i = 0;
 	res = malloc((len + 1) * sizeof(int));
 	if (!res)
 		ft_raise_error();
 	res[ft_min_arr(arr, len)] = len - 1;
+	arr[ft_min_arr(arr, len)] = INT_MIN;
 	while (i < len - 1)
 	{
-		res[ft_max_arr(arr, len)] = id++;
+		res[ft_max_arr(arr, len)] = i++;
 		arr[ft_max_arr(arr, len)] = INT_MIN;
-		i++;
 	}
 	res[len] = -1;
 	free(arr);
@@ -79,22 +77,22 @@ int		*ft_parse_stack(char **st, int len)
 	int	*res;
 	int	i;
 
-	i = len - 1;
+	i = 0;
 	res = malloc(len * sizeof(int));
 	if (!res)
 		ft_raise_error();
-	while (i > 0)
+	while (i < len)
 	{
 		if (!ft_str_is_digit(st[i]))
 			return (NULL);
-		else if (st[i][0] == '0' && st[i][1] == '\0')
+		else if (st[len - 1 - i][0] == '0' && st[len - 1 - i][1] == '\0')
 			res[i] = 0;
-		else if (st[i][0] == '-' && st[i][1] == '1' && st[i][2] == '\0')
+		else if (st[len - 1 - i][0] == '-' && st[len - 1 - i][1] == '1' && st[len - 1 - i][2] == '\0')
 			res[i] = -1;
-		else if (ft_atoi(st[i]) == -1 || ft_atoi(st[i]) == 0)
+		else if (ft_atoi(st[len - 1 - i]) == -1 || ft_atoi(st[len - 1 - i]) == 0)
 			return (NULL);
-		res[i] = ft_atoi(st[i]);
-		i--;
+		res[i] = ft_atoi(st[len - 1 - i]);
+		i++;
 	}
 	if (ft_has_dups(res, len))
 	{

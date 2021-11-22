@@ -6,7 +6,7 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 20:35:34 by unix              #+#    #+#             */
-/*   Updated: 2021/11/22 15:19:56 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/22 16:06:18 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	ft_sort(int *st_a)
 	if (ft_is_sorted(st_a, 0))
 		return ;
 	st_b = ft_alloc_b(ft_slen(st_a));
-	print_stacks(st_a, st_b);
+	//print_stacks(st_a, st_b);
 	if (ft_slen(st_a) == 2)
 		ft_rotate('a', st_a, st_b);
 	if (ft_slen(st_a) == 3)
@@ -44,5 +44,5 @@ void	ft_sort(int *st_a)
 		ft_solve_five(st_a, st_b);
 	if (ft_slen(st_a) > 5)
 		ft_solve_common(st_a, st_b);
-	print_stacks(st_a, st_b);
+	//print_stacks(st_a, st_b);
 }
