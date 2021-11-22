@@ -1,30 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/08 14:23:37 by unix              #+#    #+#             */
-/*   Updated: 2021/11/22 15:12:20 by unix             ###   ########.fr       */
+/*   Created: 2021/11/08 14:23:40 by unix              #+#    #+#             */
+/*   Updated: 2021/11/22 10:00:19 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#ifndef CHECKER_H
+# define CHECKER_H
 
-int	main(int argc, char **argv)
-{
-	int		*stack;
+# include "push_swap.h"
 
-	if (argc != 1)
-	{
-		stack = ft_parse_stack(argv + 1, argc - 1);
-		if (!stack)
-			ft_raise_error();
-		ft_sort(stack);
-		free(stack);
-	}
-	else
-		ft_raise_error();
-	return (0);
-}
+#endif

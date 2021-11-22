@@ -6,7 +6,7 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 14:23:40 by unix              #+#    #+#             */
-/*   Updated: 2021/11/21 18:32:05 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/22 15:06:11 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	ft_raise_error();
 
 //VALIDATE
 int		ft_validate_stack(char **st);
+int		ft_str_is_digit(char *str);
 int		ft_has_dups(int *arr, int len);
 int		ft_is_sorted(int *arr, int direction);
 
@@ -36,6 +37,9 @@ int		ft_in(int elem, int min, int max);
 int		ft_slen(int *stack);
 int		ft_index(int val, int *stack);
 void	ft_swap_val(int *d1, int *d2);
+int		*ft_indexate(int *arr, int len);
+int		*ft_parse_stack(char **st, int len);
+void	free_char_arr(char **st);
 
 //SORTING FUNCTIONS
 void	ft_sort(int *arr);
