@@ -6,7 +6,7 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 20:35:34 by unix              #+#    #+#             */
-/*   Updated: 2021/11/22 16:06:18 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/22 16:09:02 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	*ft_alloc_b(int size)
 void	ft_sort(int *st_a)
 {
 	int	*st_b;
-	
+
 	if (ft_is_sorted(st_a, 0))
 		return ;
 	st_b = ft_alloc_b(ft_slen(st_a));

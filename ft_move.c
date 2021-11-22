@@ -6,7 +6,7 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 17:07:36 by unix              #+#    #+#             */
-/*   Updated: 2021/11/21 18:38:38 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/22 16:15:37 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	ft_push(char mode, int *st_a, int *st_b)
 	}
 }
 
-void	ft_rot(int* stack, int direction)
+void	ft_rot(int *stack, int direction)
 {
 	int	len;
 	int	i;

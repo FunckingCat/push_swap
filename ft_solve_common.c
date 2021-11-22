@@ -6,7 +6,7 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 15:56:39 by unix              #+#    #+#             */
-/*   Updated: 2021/11/21 20:15:37 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/22 16:15:19 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_find_next(int *stack, int min, int max)
 	int	pos_top;
 	int	pos_bot;
 	int	count;
-	
+
 	count = 0;
 	pos_top = -1;
 	pos_bot = -1;
@@ -65,8 +65,8 @@ void	ft_move_chunk(int *st_a, int *st_b, int size)
 
 void	ft_move_back(int *st_a, int *st_b)
 {
-	int current;
-	
+	int	current;
+
 	while (ft_slen(st_b) != 0)
 	{
 		current = st_a[ft_slen(st_a) - 1] + 1;

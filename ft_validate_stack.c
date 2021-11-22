@@ -6,7 +6,7 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 19:40:30 by unix              #+#    #+#             */
-/*   Updated: 2021/11/22 16:05:54 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/22 16:13:47 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,11 @@ int	*ft_indexate(int *arr, int len)
 	int	*res;
 	int	i;
 
+	if (ft_has_dups(arr, len))
+	{
+		free(arr);
+		return (NULL);
+	}
 	i = 0;
 	res = malloc((len + 1) * sizeof(int));
 	if (!res)
@@ -72,7 +77,7 @@ int	*ft_indexate(int *arr, int len)
 	return (res);
 }
 
-int		*ft_parse_stack(char **st, int len)
+int	*ft_parse_stack(char **st, int len)
 {
 	int	*res;
 	int	i;
@@ -87,17 +92,14 @@ int		*ft_parse_stack(char **st, int len)
 			return (NULL);
 		else if (st[len - 1 - i][0] == '0' && st[len - 1 - i][1] == '\0')
 			res[i] = 0;
-		else if (st[len - 1 - i][0] == '-' && st[len - 1 - i][1] == '1' && st[len - 1 - i][2] == '\0')
+		else if (st[len - 1 - i][0] == '-' && st[len - 1 - i][1] == '1'
+			&& st[len - 1 - i][2] == '\0')
 			res[i] = -1;
-		else if (ft_atoi(st[len - 1 - i]) == -1 || ft_atoi(st[len - 1 - i]) == 0)
+		else if (ft_atoi(st[len - 1 - i]) == -1
+			|| ft_atoi(st[len - 1 - i]) == 0)
 			return (NULL);
 		res[i] = ft_atoi(st[len - 1 - i]);
 		i++;
-	}
-	if (ft_has_dups(res, len))
-	{
-		free(res);
-		return (NULL);
 	}
 	return (ft_indexate(res, len));
 }

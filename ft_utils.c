@@ -6,13 +6,13 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 18:55:59 by unix              #+#    #+#             */
-/*   Updated: 2021/11/21 18:36:15 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/22 16:14:27 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_raise_error()
+void	ft_raise_error(void)
 {
 	ft_putstr_fd("Error\n", 1);
 	exit(1);
@@ -61,9 +61,9 @@ int	ft_is_sorted(int *arr, int direction)
 		if (direction == 0)
 		{
 			if (*arr > *(arr + 1))
-				return (0); 
+				return (0);
 		}
-		else 
+		else
 		{
 			if (*arr < *(arr + 1))
 				return (0);
