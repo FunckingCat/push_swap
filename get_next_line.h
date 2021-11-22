@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/08 14:23:37 by unix              #+#    #+#             */
-/*   Updated: 2021/11/22 16:22:17 by unix             ###   ########.fr       */
+/*   Created: 2021/10/18 17:37:18 by unix              #+#    #+#             */
+/*   Updated: 2021/11/22 16:29:29 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-int	main(int argc, char **argv)
-{
-	int	*stack;
+# include <stdio.h>
+# include <stdlib.h>
+# include <fcntl.h>
+# include <unistd.h>
 
-	if (argc != 1)
-	{
-		stack = ft_parse_stack(argv + 1, argc - 1);
-		if (!stack)
-			ft_raise_error();
-		ft_sort(stack);
-		free(stack);
-	}
-	else
-		ft_raise_error();
-	return (0);
-}
+# define BUFFER_SIZE 42
+
+char	*get_next_line(int fd);
+
+char	*ft_strchr(const char *s, int c);
+size_t	ft_strlen(const char *s);
+void	*ft_memmove(void *dest, const void *src, size_t n);
+char	*ft_strjoin(char const *s1, char const *s2);
+
+#endif

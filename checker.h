@@ -6,7 +6,7 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 14:23:40 by unix              #+#    #+#             */
-/*   Updated: 2021/11/22 10:00:19 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/22 16:30:14 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,8 @@
 # define CHECKER_H
 
 # include "push_swap.h"
+
+//GNL
+char	*get_next_line(int fd);
 
 #endif
