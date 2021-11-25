@@ -6,7 +6,7 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 19:34:12 by unix              #+#    #+#             */
-/*   Updated: 2021/11/25 11:21:16 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/25 11:49:47 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@ void	ft_solve_top_three(int *st_a, int *st_b)
 	if (a[2] < a[0] && a[0] < a[1])
 	{
 		ft_swap('a', st_a, st_b);
-		ft_case_two(st_a, st_a);
+		ft_case_two(st_a, st_b);
 	}
 	if (a[1] < a[0] && a[0] < a[2])
-		ft_case_two(st_a, st_a);
+		ft_case_two(st_a, st_b);
 	if (a[1] < a[2] && a[2] < a[0])
 		ft_case_one(st_a, st_b);
 }
