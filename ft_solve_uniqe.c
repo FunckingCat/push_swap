@@ -6,7 +6,7 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 19:34:12 by unix              #+#    #+#             */
-/*   Updated: 2021/11/22 16:14:41 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/25 10:09:22 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,28 @@
 
 void	ft_solve_three(int *st)
 {
+	int a[3];
+
+	a[0] = st[ft_slen(st) - 3];
+	a[1] = st[ft_slen(st) - 2];
+	a[2] = st[ft_slen(st) - 1];
 	if (ft_is_sorted(st, 0))
 		return ;
-	if (st[0] == 0 && st[1] == 2 && st[2] == 1)
+	if (a[0] < a[2] && a[2] < a[1])
 		ft_swap('a', st, st);
-	if (st[0] == 2 && st[1] == 1 && st[2] == 0)
+	if (a[2] < a[1] && a[1] < a[0])
 	{
 		ft_swap('a', st, st);
 		ft_rev_rotate('a', st, st);
 	}
-	if (st[0] == 1 && st[1] == 2 && st[2] == 0)
+	if (a[2] < a[0] && a[0] < a[1])
 		ft_rotate('a', st, st);
-	if (st[0] == 1 && st[1] == 0 && st[2] == 2)
+	if (a[1] < a[0] && a[0] < a[2])
 	{
 		ft_swap('a', st, st);
 		ft_rotate('a', st, st);
 	}
-	if (st[0] == 2 && st[1] == 0 && st[2] == 1)
+	if (a[1] < a[2] && a[2] < a[0])
 		ft_rev_rotate('a', st, st);
 }
 
