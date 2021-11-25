@@ -6,7 +6,7 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 14:23:40 by unix              #+#    #+#             */
-/*   Updated: 2021/11/25 11:22:34 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/25 16:44:28 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void	ft_swap_val(int *d1, int *d2);
 int		*ft_indexate(int *arr, int len);
 int		*ft_parse_stack(char **st, int len);
 void	free_char_arr(char **st);
+int		ft_top(int	*st, int pos);
 
 //SORTING FUNCTIONS
 void	ft_sort(int *arr);
