@@ -6,7 +6,7 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 15:56:39 by unix              #+#    #+#             */
-/*   Updated: 2021/11/25 12:10:27 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/25 16:24:29 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,21 @@ int	ft_find_next(int *stack, int min, int max)
 		return (pos_bot);
 }
 
-void	ft_move_chunk(int *st_a, int *st_b, int size)
+void	ft_move_chunk(int *st_a, int *st_b, int size, int lap)
 {
 	int	max;
 	int	min;
 
-	max = st_a[ft_max_arr(st_a, ft_slen(st_a))];
-	min = max - size + 1;
-	while (size-- > 0)
+	max = (ft_slen(st_a) + ft_slen(st_b)) / 2 + size * lap;
+	min = (ft_slen(st_a) + ft_slen(st_b)) / 2 - size * lap;
+	if (min <= 0)
+		min = 1;
+	if (max >= ft_slen(st_a) + ft_slen(st_b) - 1)
+		max =(ft_slen(st_a) + ft_slen(st_b)) - 2;
+	//print_stacks(st_a, st_b);
+	//printf("MIN %d MAX %d SIZE %d LAP %d\n", min, max, size, lap);
+	size *= 2;
+	while (size-- > 0 && ft_slen(st_a) > 2)
 	{
 		while (ft_find_next(st_a, min, max) != ft_slen(st_a) - 1)
 		{
@@ -57,6 +64,8 @@ void	ft_move_chunk(int *st_a, int *st_b, int size)
 				ft_rev_rotate('a', st_a, st_b);
 		}
 		ft_push('b', st_a, st_b);
+		if (st_b[ft_slen(st_a) -1] > st_b[ft_slen(st_a) -1])
+			ft_swap('b', st_a, st_b);
 	}
 }
 
@@ -96,19 +105,19 @@ void	ft_move_back(int *st_a, int *st_b)
 void	ft_solve_common(int *st_a, int *st_b)
 {
 	int chunk_size;
+	int	i;
 
-	chunk_size = 2;
-	if (ft_slen(st_a) >= 100)
-		chunk_size = 3;
-	if (ft_slen(st_a) >= 500)
-		chunk_size = 6;
-	while (ft_slen(st_a) > 5)
+	chunk_size = ft_slen(st_a) * 0.15;
+	i = 1;
+	while (ft_slen(st_a) > 2)
 	{
-		if (ft_slen(st_a) - ft_slen(st_a) / chunk_size < 5)
-			ft_move_chunk(st_a, st_b, ft_slen(st_a) - 5);
-		else
-			ft_move_chunk(st_a, st_b, ft_slen(st_a) / chunk_size);
+		ft_move_chunk(st_a, st_b, chunk_size, i++);
 	}
-	ft_solve_five(st_a, st_b);
+	if (st_a[0] > st_a[1])
+		ft_swap('a', st_a, st_b);
+	ft_push('b', st_a, st_b);
+	//print_stacks(st_a, st_b);
+	//ft_solve_five(st_a, st_b);
 	ft_move_back(st_a, st_b);
+	//print_stacks(st_a, st_b);
 }
