@@ -6,7 +6,7 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 14:23:40 by unix              #+#    #+#             */
-/*   Updated: 2021/11/22 16:27:26 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/25 11:22:34 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,10 @@ void	ft_solve_three(int *st);
 void	ft_solve_four(int *st_a, int *st_b);
 void	ft_solve_five(int *st_a, int *st_b);
 void	ft_solve_common(int *st_a, int *st_b);
+void	ft_solve_top_three(int *st_a, int *st_b);
+
+//THREE MIDLEWARE
+void	ft_case_one(int *st_a, int *st_b);
+void	ft_case_two(int *st_a, int *st_b);
 
 #endif

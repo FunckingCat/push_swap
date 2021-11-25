@@ -6,11 +6,38 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 19:34:12 by unix              #+#    #+#             */
-/*   Updated: 2021/11/25 10:09:22 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/25 11:21:16 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	ft_solve_top_three(int *st_a, int *st_b)
+{
+	int a[3];
+
+	a[0] = st_a[ft_slen(st_a) - 3];
+	a[1] = st_a[ft_slen(st_a) - 2];
+	a[2] = st_a[ft_slen(st_a) - 1];
+	if (ft_is_sorted(st_a, 0))
+		return ;
+	if (a[0] < a[2] && a[2] < a[1])
+		ft_swap('a', st_a, st_b);
+	if (a[2] < a[1] && a[1] < a[0])
+	{
+		ft_swap('a', st_a, st_b);
+		ft_case_one(st_a, st_b);
+	}
+	if (a[2] < a[0] && a[0] < a[1])
+	{
+		ft_swap('a', st_a, st_b);
+		ft_case_two(st_a, st_a);
+	}
+	if (a[1] < a[0] && a[0] < a[2])
+		ft_case_two(st_a, st_a);
+	if (a[1] < a[2] && a[2] < a[0])
+		ft_case_one(st_a, st_b);
+}
 
 void	ft_solve_three(int *st)
 {

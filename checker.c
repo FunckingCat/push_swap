@@ -6,7 +6,7 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 09:32:40 by unix              #+#    #+#             */
-/*   Updated: 2021/11/22 19:29:59 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/25 11:05:59 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,12 @@ void	ft_listen_action(int *stack)
 	int		*stack_b;
 	
 	stack_b = ft_alloc_b(ft_slen(stack));
+	print_stacks(stack, stack_b);
 	action = get_next_line(0);
 	while (action && ft_strlen(action) > 1)
 	{
 		ft_handle_action(action, stack, stack_b);
+		print_stacks(stack, stack_b);
 		action = get_next_line(0);
 	}
 	free(stack_b);

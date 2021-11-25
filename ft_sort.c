@@ -6,7 +6,7 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 20:35:34 by unix              #+#    #+#             */
-/*   Updated: 2021/11/22 18:29:36 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/25 11:23:36 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	ft_sort(int *st_a)
 	if (ft_slen(st_a) == 2)
 		ft_rotate('a', st_a, st_b);
 	if (ft_slen(st_a) == 3)
-		ft_solve_three(st_a);
+		ft_solve_top_three(st_a, st_b);
 	if (ft_slen(st_a) == 4)
 		ft_solve_four(st_a, st_b);
 	if (ft_slen(st_a) == 5)
