@@ -6,7 +6,7 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 17:37:18 by unix              #+#    #+#             */
-/*   Updated: 2021/11/22 16:29:29 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/27 17:03:15 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <fcntl.h>
 # include <unistd.h>
 
-# define BUFFER_SIZE 42
+# define BUFFER_SIZE 500
 
 char	*get_next_line(int fd);
 

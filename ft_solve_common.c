@@ -6,7 +6,7 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 15:56:39 by unix              #+#    #+#             */
-/*   Updated: 2021/11/25 20:34:08 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/27 20:47:22 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,72 +45,43 @@ void	ft_move_chunk(int *st_a, int *st_b, int size, int lap, int med)
 	int	max;
 	int	min;
 
-	max = (ft_slen(st_a) + ft_slen(st_b)) - 2;
-	min = max - size * lap;
-	if (min <= 0)
-		min = 1;
-	//printf("MIN %d MAX %d SIZE %d\n", min, max, size);
-	while (size-- > 0 && ft_slen(st_a) > 2)
+	max = ft_slen(st_a) - 1;
+	while (ft_slen(st_a) != 2)
 	{
-		while (ft_find_next(st_a, min, max) != ft_slen(st_a) - 1)
+		if (ft_top(st_a, 1) == max || ft_top(st_a, 1) == 0)
+			ft_rotate('a', st_a, st_b);
+		else if (ft_top(st_a, 1) <= med)
+			ft_push('b', st_a, st_b);
+		else
 		{
-			if (ft_find_next(st_a, min, max) >= ft_slen(st_a) / 2)
-				ft_rotate('a', st_a, st_b);
-			else
-				ft_rev_rotate('a', st_a, st_b);
+			ft_push('b', st_a, st_b);
+			if (ft_slen(st_b) > 1)
+				ft_rotate('b', st_a, st_b);
 		}
-		ft_push('b', st_a, st_b);
-		if (ft_slen(st_b) > 1 && ft_top(st_b, 1) > ft_top(st_b, 2))
-			ft_swap('b', st_a, st_b);
-		//print_stacks(st_a, st_b);
 	}
 }
 
 void	ft_move_back(int *st_a, int *st_b, int med)
 {
 	int	count;
+	int	ind;
 
 	count = 0;
 	while (ft_slen(st_b) > 0)
 	{
-		if (ft_slen(st_b) > 1 && ft_top(st_b, 1) > ft_top(st_b, 2))
-			ft_swap('b', st_a, st_b);
-		else
+		ft_roll(ft_score(st_a, st_b), st_b);
+		while (ft_top(st_a, 1) < ft_top(st_b, 1) && st_a[0] < ft_top(st_b, 1))
 		{
-			while (ft_top(st_a, 1) < ft_top(st_b, 1))
-			{
-				ft_rev_rotate('a', st_a, st_b);
-				count--;
-			}
-			while (ft_top(st_a, 1) > ft_top(st_b, 1))
-			{
-				ft_rotate('a', st_a, st_b);
-				count++;
-			}
-			ft_push('a', st_a, st_b);
+			ft_rev_rotate('a', st_a, st_b);
+			count--;
 		}
-		// print_stacks(st_a, st_b);
-		// printf("COUNT %d\n", count);
-		// getchar();
+		while (ft_top(st_a, 1) > ft_top(st_b, 1))
+		{
+			ft_rotate('a', st_a, st_b);
+			count++;
+		}
+		ft_push('a', st_a, st_b);
 	}
-	// while (ft_slen(st_b) > 0)
-	// {
-	// 	while (count < 0)
-	// 	{
-	// 		ft_rotate('a', st_a, st_b);
-	// 		count++;
-	// 	}
-	// 	while (st_a[0] < ft_top(st_b, 1))
-	// 	{
-	// 		ft_rev_rotate('a', st_a, st_b);
-	// 		count--;
-	// 	}
-	// 	ft_push('a', st_a, st_b);
-	// 	count--;
-	// 	// print_stacks(st_a, st_b);
-	// 	// printf("COUNT %d\n", count);
-	// 	// getchar();
-	// }
 }
 
 void	ft_solve_common(int *st_a, int *st_b)

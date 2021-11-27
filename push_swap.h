@@ -6,7 +6,7 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 14:23:40 by unix              #+#    #+#             */
-/*   Updated: 2021/11/25 16:44:28 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/27 17:43:37 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int		*ft_indexate(int *arr, int len);
 int		*ft_parse_stack(char **st, int len);
 void	free_char_arr(char **st);
 int		ft_top(int	*st, int pos);
+void	ft_roll(int id, int *st);
 
 //SORTING FUNCTIONS
 void	ft_sort(int *arr);
@@ -57,6 +58,7 @@ void	ft_solve_four(int *st_a, int *st_b);
 void	ft_solve_five(int *st_a, int *st_b);
 void	ft_solve_common(int *st_a, int *st_b);
 void	ft_solve_top_three(int *st_a, int *st_b);
+int		ft_score(int *st_a, int *st_b);
 
 //THREE MIDLEWARE
 void	ft_case_one(int *st_a, int *st_b);
