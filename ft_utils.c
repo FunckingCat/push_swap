@@ -6,7 +6,7 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 18:55:59 by unix              #+#    #+#             */
-/*   Updated: 2021/11/28 13:52:30 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/28 14:28:38 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,9 +71,4 @@ int	ft_is_sorted(int *arr, int direction)
 		arr++;
 	}
 	return (1);
-}
-
-int	ft_top(int	*st, int pos)
-{
-	return (st[ft_slen(st) - pos]);
 }

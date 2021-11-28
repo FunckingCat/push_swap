@@ -6,25 +6,75 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 14:23:37 by unix              #+#    #+#             */
-/*   Updated: 2021/11/22 16:22:17 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/28 14:34:01 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+int	*ft_alloc_b(int size)
+{
+	int	*st_b;
+	int	i;
+
+	i = 0;
+	st_b = malloc((size + 1) * sizeof(int));
+	if (!st_b)
+		ft_raise_error();
+	while (i < size + 1)
+		*(st_b + i++) = -1;
+	return (st_b);
+}
+
+void	ft_sort(int *st_a, int *st_b)
+{
+	if (ft_is_sorted(st_a, 0))
+		return ;
+	if (ft_slen(st_a) == 2)
+		ft_rotate('a', st_a, st_b);
+	if (ft_slen(st_a) == 3)
+		ft_solve_three(st_a);
+	if (ft_slen(st_a) == 4)
+		ft_solve_four(st_a, st_b);
+	if (ft_slen(st_a) == 5)
+		ft_solve_five(st_a, st_b);
+	if (ft_slen(st_a) > 5)
+		ft_solve_common(st_a, st_b);
+}
+
 int	main(int argc, char **argv)
 {
-	int	*stack;
+	int	*st_a;
+	int	*st_b;
 
 	if (argc != 1)
 	{
-		stack = ft_parse_stack(argv + 1, argc - 1);
-		if (!stack)
+		st_a = ft_parse_stack(argv + 1, argc - 1);
+		if (!st_a)
 			ft_raise_error();
-		ft_sort(stack);
-		free(stack);
+		st_b = ft_alloc_b(ft_slen(st_a));
+		if (!st_b)
+			ft_raise_error();
+		ft_sort(st_a, st_b);
+		free(st_a);
+		free(st_b);
 	}
 	else
 		ft_raise_error();
 	return (0);
+}
+
+void	print_stacks(int *st_a, int *st_b)
+{
+	int	i;
+
+	i = ft_slen(st_a);
+	if (ft_slen(st_b) > i)
+		i = ft_slen(st_b);
+	while (i >= 0)
+	{
+		printf("%6d   %6d\n", st_a[i], st_b[i]);
+		i--;
+	}
+	printf("---------------------\n");
 }

@@ -6,7 +6,7 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 14:23:40 by unix              #+#    #+#             */
-/*   Updated: 2021/11/28 14:21:15 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/28 14:35:36 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,10 @@ void	ft_rotate(char mode, int *st_a, int *st_b);
 void	ft_rev_rotate(char mode, int *st_a, int *st_b);
 
 //SOLVE
-void	ft_sort(int *arr);
 int		ft_score(int *st_a, int *st_b);
+void	ft_solve_three(int *st);
+void	ft_solve_four(int *st_a, int *st_b);
+void	ft_solve_five(int *st_a, int *st_b);
 void	ft_solve_common(int *st_a, int *st_b);
 
 
