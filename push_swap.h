@@ -6,7 +6,7 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 14:23:40 by unix              #+#    #+#             */
-/*   Updated: 2021/11/28 18:38:07 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/28 19:04:26 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,6 @@
 # define PUSH_SWAP_H
 
 # include "libft/libft.h"
-# include <stdio.h>
-
-//TO DELETE
-void	print_stacks(int *st_a, int *st_b);
 
 //RAISE ERROR
 void	ft_raise_error(int	*st_a, int *st_b);

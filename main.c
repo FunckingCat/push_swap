@@ -6,7 +6,7 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 14:23:37 by unix              #+#    #+#             */
-/*   Updated: 2021/11/28 18:43:47 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/28 19:04:12 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,18 +53,3 @@ int	main(int argc, char **argv)
 		ft_raise_error(NULL, NULL);
 	return (0);
 }
-
-// void	print_stacks(int *st_a, int *st_b)
-// {
-// 	int	i;
-
-// 	i = ft_slen(st_a);
-// 	if (ft_slen(st_b) > i)
-// 		i = ft_slen(st_b);
-// 	while (i >= 0)
-// 	{
-// 		printf("%6d   %6d\n", st_a[i], st_b[i]);
-// 		i--;
-// 	}
-// 	printf("---------------------\n");
-// }

@@ -6,14 +6,13 @@
 #    By: unix <unix@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/08 14:23:43 by unix              #+#    #+#              #
-#    Updated: 2021/11/28 18:35:19 by unix             ###   ########.fr        #
+#    Updated: 2021/11/28 19:04:40 by unix             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 BONUS_NAME = checker
-CC = gcc -g
-#FLAGS = 
+CC = gcc
 FLAGS = -Wall -Werror -Wextra
 LIB = -L '.' -lft 
 
