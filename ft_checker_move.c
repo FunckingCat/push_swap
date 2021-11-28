@@ -6,7 +6,7 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 17:07:36 by unix              #+#    #+#             */
-/*   Updated: 2021/11/28 17:50:22 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/28 18:45:47 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ft_swap(char mode, int *st_a, int *st_b)
 			ft_swap_val(st_b + ft_slen(st_b) - 1, st_b + ft_slen(st_b) - 2);
 	}
 	else
-		ft_raise_error();
+		ft_raise_error(st_a, st_b);
 }
 
 void	ft_push(char mode, int *st_a, int *st_b)
@@ -44,7 +44,7 @@ void	ft_push(char mode, int *st_a, int *st_b)
 		ft_swap_val(st_a + ft_slen(st_a) - 1, st_b + ft_slen(st_b));
 	}
 	else
-		ft_raise_error();
+		ft_raise_error(st_a, st_b);
 }
 
 void	ft_rot(int *stack, int direction)
@@ -91,7 +91,7 @@ void	ft_rotate(char mode, int *st_a, int *st_b)
 			ft_rot(st_b, 0);
 	}
 	else
-		ft_raise_error();
+		ft_raise_error(st_a, st_b);
 }
 
 void	ft_rev_rotate(char mode, int *st_a, int *st_b)
@@ -112,5 +112,5 @@ void	ft_rev_rotate(char mode, int *st_a, int *st_b)
 			ft_rot(st_b, 1);
 	}
 	else
-		ft_raise_error();
+		ft_raise_error(st_a, st_b);
 }

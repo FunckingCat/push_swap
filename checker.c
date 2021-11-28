@@ -6,7 +6,7 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 09:32:40 by unix              #+#    #+#             */
-/*   Updated: 2021/11/28 16:28:09 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/28 18:47:12 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	*ft_alloc_b(int size)
 	i = 0;
 	st_b = malloc((size + 1) * sizeof(int));
 	if (!st_b)
-		ft_raise_error();
+		return (NULL);
 	while (i < size + 1)
 		*(st_b + i++) = -1;
 	return (st_b);
@@ -37,33 +37,30 @@ void	ft_handle_action(char *action, int *st_a, int *st_b)
 		else if (action[0] == 'r')
 			ft_rotate(action[1], st_a, st_b);
 		else
-			ft_raise_error();
+			ft_raise_error(st_a, st_b);
 	}
 	else if (ft_strlen(action) == 4)
 	{
 		if (action[0] == 'r' && action[1] == 'r')
 			ft_rev_rotate(action[2], st_a, st_b);
 		else
-			ft_raise_error();
+			ft_raise_error(st_a, st_b);
 	}
 	else
-		ft_raise_error();
+		ft_raise_error(st_a, st_b);
 }
 
-void	ft_listen_action(int *stack)
+void	ft_listen_action(int *st_a, int *st_b)
 {
 	char	*action;
-	int		*stack_b;
 
-	stack_b = ft_alloc_b(ft_slen(stack));
 	action = get_next_line(0);
 	while (action && ft_strlen(action) > 1)
 	{
-		ft_handle_action(action, stack, stack_b);
+		ft_handle_action(action, st_a, st_b);
 		action = get_next_line(0);
 	}
-	free(stack_b);
-	if (ft_is_sorted(stack, 0))
+	if (ft_is_sorted(st_a, 0))
 		ft_putstr_fd("OK\n", 1);
 	else
 		ft_putstr_fd("KO\n", 1);
@@ -71,15 +68,20 @@ void	ft_listen_action(int *stack)
 
 int	main(int argc, char **argv)
 {
-	int	*stack;
+	int		*st_a;
+	int		*st_b;
 
 	if (argc != 1)
 	{
-		stack = ft_parse_stack(argv + 1, argc - 1);
-		if (!stack)
-			ft_raise_error();
-		ft_listen_action(stack);
-		free(stack);
+		st_a = ft_parse_stack(argv + 1, argc - 1);
+		if (!st_a)
+			ft_raise_error(NULL, NULL);
+		st_b = ft_alloc_b(ft_slen(st_a));
+		if (!st_b)
+			ft_raise_error(st_a, NULL);
+		ft_listen_action(st_a, st_b);
+		free(st_a);
+		free(st_b);
 	}
 	return (0);
 }

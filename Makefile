@@ -6,15 +6,15 @@
 #    By: unix <unix@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/08 14:23:43 by unix              #+#    #+#              #
-#    Updated: 2021/11/28 14:58:10 by unix             ###   ########.fr        #
+#    Updated: 2021/11/28 18:35:19 by unix             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 BONUS_NAME = checker
 CC = gcc -g
-FLAGS = 
-#FLAGS = -Wall -Werror -Wextra
+#FLAGS = 
+FLAGS = -Wall -Werror -Wextra
 LIB = -L '.' -lft 
 
 HEADER = push_swap.h checker.h get_next_line.h

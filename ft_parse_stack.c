@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_validate_stack.c                                :+:      :+:    :+:   */
+/*   ft_parse_stack.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 19:40:30 by unix              #+#    #+#             */
-/*   Updated: 2021/11/22 16:13:47 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/28 18:43:25 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,10 @@ int	*ft_indexate(int *arr, int len)
 	i = 0;
 	res = malloc((len + 1) * sizeof(int));
 	if (!res)
-		ft_raise_error();
+	{
+		free(arr);
+		return (NULL);
+	}
 	res[ft_min_arr(arr, len)] = len - 1;
 	arr[ft_min_arr(arr, len)] = INT_MIN;
 	while (i < len - 1)
@@ -85,7 +88,7 @@ int	*ft_parse_stack(char **st, int len)
 	i = 0;
 	res = malloc(len * sizeof(int));
 	if (!res)
-		ft_raise_error();
+		return (NULL);
 	while (i < len)
 	{
 		if (!ft_str_is_digit(st[i]))

@@ -6,7 +6,7 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 14:23:40 by unix              #+#    #+#             */
-/*   Updated: 2021/11/28 15:00:41 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/28 18:38:07 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 void	print_stacks(int *st_a, int *st_b);
 
 //RAISE ERROR
-void	ft_raise_error(void);
+void	ft_raise_error(int	*st_a, int *st_b);
 
 //PARSE
 int		*ft_parse_stack(char **st, int len);
