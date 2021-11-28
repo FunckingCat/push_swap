@@ -6,11 +6,28 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 15:56:39 by unix              #+#    #+#             */
-/*   Updated: 2021/11/27 21:01:00 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/28 13:49:55 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void ft_roll(int id, int *st)
+{
+	int	val;
+	
+	val = st[id];
+	if (id > ft_slen(st) / 2 - 1)
+	{
+		while (ft_top(st, 1) != val)
+			ft_rotate('b', st, st);
+	}
+	else
+	{
+		while (ft_top(st, 1) != val)
+			ft_rev_rotate('b', st, st);
+	}
+}
 
 void	ft_move_chunk(int *st_a, int *st_b)
 {

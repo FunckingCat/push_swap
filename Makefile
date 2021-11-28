@@ -6,7 +6,7 @@
 #    By: unix <unix@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/08 14:23:43 by unix              #+#    #+#              #
-#    Updated: 2021/11/27 16:26:08 by unix             ###   ########.fr        #
+#    Updated: 2021/11/28 13:53:04 by unix             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ HEADER = push_swap.h checker.h get_next_line.h
 
 COMMON = ft_utils.c ft_validate_stack.c ft_stack_utils.c
 MAIN = main.c ft_solve_uniqe.c ft_solve_common.c ft_sort.c ft_move.c \
-		ft_tree_midleware.c ft_score.c
+		ft_score.c
 BONUS = checker.c get_next_line.c get_next_line_utils.c ft_checker_move.c
 
 MAIN_FILES = $(MAIN) $(COMMON)

@@ -6,7 +6,7 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 18:55:59 by unix              #+#    #+#             */
-/*   Updated: 2021/11/22 18:38:19 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/28 13:52:30 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,9 +73,7 @@ int	ft_is_sorted(int *arr, int direction)
 	return (1);
 }
 
-int	ft_in(int elem, int min, int max)
+int	ft_top(int	*st, int pos)
 {
-	if (elem >= min && elem <= max)
-		return (1);
-	return (0);
+	return (st[ft_slen(st) - pos]);
 }
