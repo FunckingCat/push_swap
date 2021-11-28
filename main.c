@@ -6,7 +6,7 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 14:23:37 by unix              #+#    #+#             */
-/*   Updated: 2021/11/28 14:56:09 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/28 15:00:35 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	main(int argc, char **argv)
 		{
 			if (ft_slen(st_a) > 5)
 				ft_solve_common(st_a, st_b);
-			else	
+			else
 				ft_solve_small(st_a, st_b);
 		}
 		free(st_a);

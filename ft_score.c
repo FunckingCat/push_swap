@@ -6,7 +6,7 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 16:24:12 by unix              #+#    #+#             */
-/*   Updated: 2021/11/28 13:49:50 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/28 15:00:10 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_second_part(int val, int *st)
 {
 	int	count;
 	int	i;
-	
+
 	count = 0;
 	if (st[ft_slen(st) - 1] < val)
 	{
@@ -37,7 +37,7 @@ int	ft_first_part(int val, int *st)
 {
 	if (ft_index(val, st) > ft_slen(st) / 2 - 1)
 		return (ft_slen(st) - ft_index(val, st) - 1);
-	else 
+	else
 		return (ft_index(val, st) + 1);
 	return (0);
 }

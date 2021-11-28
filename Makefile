@@ -6,7 +6,7 @@
 #    By: unix <unix@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/08 14:23:43 by unix              #+#    #+#              #
-#    Updated: 2021/11/28 14:21:54 by unix             ###   ########.fr        #
+#    Updated: 2021/11/28 14:58:10 by unix             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ LIB = -L '.' -lft
 HEADER = push_swap.h checker.h get_next_line.h
 
 COMMON = ft_utils.c ft_parse_stack.c ft_stack_utils.c
-MAIN = main.c ft_solve.c ft_sort.c ft_move.c ft_score.c
+MAIN = main.c ft_solve.c ft_solve_small.c ft_move.c ft_score.c
 BONUS = checker.c get_next_line.c get_next_line_utils.c ft_checker_move.c
 
 MAIN_FILES = $(MAIN) $(COMMON)
