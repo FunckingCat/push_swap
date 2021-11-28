@@ -6,7 +6,7 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 14:23:37 by unix              #+#    #+#             */
-/*   Updated: 2021/11/28 14:34:01 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/28 14:56:09 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,22 +26,6 @@ int	*ft_alloc_b(int size)
 	return (st_b);
 }
 
-void	ft_sort(int *st_a, int *st_b)
-{
-	if (ft_is_sorted(st_a, 0))
-		return ;
-	if (ft_slen(st_a) == 2)
-		ft_rotate('a', st_a, st_b);
-	if (ft_slen(st_a) == 3)
-		ft_solve_three(st_a);
-	if (ft_slen(st_a) == 4)
-		ft_solve_four(st_a, st_b);
-	if (ft_slen(st_a) == 5)
-		ft_solve_five(st_a, st_b);
-	if (ft_slen(st_a) > 5)
-		ft_solve_common(st_a, st_b);
-}
-
 int	main(int argc, char **argv)
 {
 	int	*st_a;
@@ -55,7 +39,13 @@ int	main(int argc, char **argv)
 		st_b = ft_alloc_b(ft_slen(st_a));
 		if (!st_b)
 			ft_raise_error();
-		ft_sort(st_a, st_b);
+		if (!ft_is_sorted(st_a, 0))
+		{
+			if (ft_slen(st_a) > 5)
+				ft_solve_common(st_a, st_b);
+			else	
+				ft_solve_small(st_a, st_b);
+		}
 		free(st_a);
 		free(st_b);
 	}
