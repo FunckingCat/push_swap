@@ -6,7 +6,7 @@
 /*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 17:07:36 by unix              #+#    #+#             */
-/*   Updated: 2021/11/23 18:07:12 by unix             ###   ########.fr       */
+/*   Updated: 2021/11/28 17:50:22 by unix             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ void	ft_rotate(char mode, int *st_a, int *st_b)
 	{
 		if (ft_slen(st_a) > 1)
 			ft_rot(st_a, 0);
-		else if (ft_slen(st_b) > 1)
+		if (ft_slen(st_b) > 1)
 			ft_rot(st_b, 0);
 	}
 	else
@@ -108,7 +108,7 @@ void	ft_rev_rotate(char mode, int *st_a, int *st_b)
 	{
 		if (ft_slen(st_a) > 1)
 			ft_rot(st_a, 1);
-		else if (ft_slen(st_b) > 1)
+		if (ft_slen(st_b) > 1)
 			ft_rot(st_b, 1);
 	}
 	else
