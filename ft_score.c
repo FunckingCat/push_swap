@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_score.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: tyamcha <tyamcha@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 16:24:12 by unix              #+#    #+#             */
-/*   Updated: 2021/11/28 15:00:10 by unix             ###   ########.fr       */
+/*   Updated: 2021/12/02 16:05:32 by tyamcha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,16 @@ int	ft_second_part(int val, int *st)
 		count = 0;
 		while (st[count] < val)
 			count++;
+		if (count > ft_slen(st) / 2 - 1)
+			count = ft_slen(st) / 2 - 1;
 	}
 	else
 	{
 		i = ft_slen(st) - 1;
 		while (st[i--] > val)
 			count++;
+		if (count > ft_slen(st) / 2 - 1)
+			count = ft_slen(st) / 2 - 1;
 	}
 	return (count);
 }
