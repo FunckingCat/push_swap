@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: unix <unix@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: tyamcha <tyamcha@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 09:32:40 by unix              #+#    #+#             */
-/*   Updated: 2021/11/28 18:47:12 by unix             ###   ########.fr       */
+/*   Updated: 2021/12/02 10:54:18 by tyamcha          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,12 @@ void	ft_listen_action(int *st_a, int *st_b)
 	char	*action;
 
 	action = get_next_line(0);
-	while (action && ft_strlen(action) > 1)
+	while (action)
 	{
 		ft_handle_action(action, st_a, st_b);
 		action = get_next_line(0);
 	}
-	if (ft_is_sorted(st_a, 0))
+	if (ft_is_sorted(st_a, 0) && ft_slen(st_b) == 0)
 		ft_putstr_fd("OK\n", 1);
 	else
 		ft_putstr_fd("KO\n", 1);
